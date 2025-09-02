@@ -1698,3 +1698,19 @@
 .environment {
    border-color: #97c36b;
 }
+
+.world-map {
+    position: relative;
+    width: 100%;
+}
+
+.world-map::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../img/theme/world_map.png') center center no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 0;
+}
