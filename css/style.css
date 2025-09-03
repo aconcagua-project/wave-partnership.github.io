@@ -1491,7 +1491,7 @@
 }
 
 .cookie-button {
-    background-color: var(--aconcagua-color-1);
+    background-color: var(--aconcagua-color-5);
     color: white;
     border: none;
     padding: 10px 20px;
@@ -1501,7 +1501,7 @@
 }
 
 .cookie-button:hover {
-    background-color: var(--aconcagua-color-5);
+    background-color: var(--aconcagua-color-6);
 }
 
 .bottom-gradient {
