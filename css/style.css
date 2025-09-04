@@ -722,7 +722,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 25px;
+    padding: 10px;
     font-size: 30px;
     font-weight: bold;
     background: var(--aconcagua-color-3);
@@ -1486,6 +1486,7 @@
 @media (max-width: 991px) {
     .cookie-banner button {
         display: block;
+        margin-top: 10px;
     }
 }
 
@@ -1767,4 +1768,10 @@
     opacity: 0.1;
     pointer-events: none;
     z-index: 0;
+}
+
+@media (max-width: 767px) {
+    .mb-5 {
+        margin-bottom: 1rem !important;
+    }
 }
