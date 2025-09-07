@@ -1775,3 +1775,7 @@
         margin-bottom: 1rem !important;
     }
 }
+
+.sm-link {
+    margin: -8px 10px 10px 10px;
+}
