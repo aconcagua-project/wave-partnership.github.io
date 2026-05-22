@@ -21,28 +21,75 @@ function getCookie(name) {
 // Function to check cookie and show/hide banner
 function checkCookie() {
     const cookieConsent = getCookie("cookieConsent");
-    if (cookieConsent !== "accepted") {
-        document.getElementById("cookie-banner").style.display = "block";
-    } else {
-        loadGoogleAnalytics();
+    const banner = document.getElementById("cookie-banner");
+    
+    if (banner) {
+        if (cookieConsent === "accepted") {
+            // User has explicitly accepted tracking
+            banner.style.display = "none";
+            loadGoogleAnalytics();
+        } else if (cookieConsent === "rejected") {
+            // User explicitly rejected cookies
+            banner.style.display = "none";
+        } else {
+            // No explicit consent - show the banner and prevent tracking
+            banner.style.display = "block";
+        }
     }
 }
 
 // Event listener for the Accept button
-document.getElementById("accept-cookies").addEventListener("click", function () {
-    setCookie("cookieConsent", "accepted", 30);
-    document.getElementById("cookie-banner").style.display = "none";
-    loadGoogleAnalytics();
+document.addEventListener("DOMContentLoaded", function () {
+    const acceptButton = document.getElementById("accept-cookies");
+    if (acceptButton) {
+        acceptButton.addEventListener("click", function () {
+            setCookie("cookieConsent", "accepted", 180);
+            const banner = document.getElementById("cookie-banner");
+            if (banner) {
+                banner.style.display = "none";
+            }
+            loadGoogleAnalytics();
+        });
+    }
+
+    const rejectButton = document.getElementById("reject-cookies");
+    if (rejectButton) {
+        rejectButton.addEventListener("click", function () {
+            setCookie("cookieConsent", "rejected", 180);
+            const banner = document.getElementById("cookie-banner");
+            if (banner) {
+                banner.style.display = "none";
+            }
+        });
+    }
+    
+    // Check cookie status after DOM is ready
+    checkCookie();
 });
 
-// Check cookie on page load
-window.onload = function () {
-    checkCookie();
-};
+// Function to revoke cookie consent
+function revokeCookie() {
+    // Delete the cookie by setting it to empty with expiration in the past
+    document.cookie = "cookieConsent=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;";
+    // Show the banner again
+    const banner = document.getElementById("cookie-banner");
+    if (banner) {
+        banner.style.display = "block";
+    }
+}
+
+// Function to reject cookie consent
+function rejectCookie() {
+    setCookie("cookieConsent", "rejected", 180);
+    const banner = document.getElementById("cookie-banner");
+    if (banner) {
+        banner.style.display = "none";
+    }
+}
 
 // Function to load Google Analytics scripts
 function loadGoogleAnalytics() {
-    // Load the Google Analytics script
+    // Load the Google Analytics script only after explicit consent
     const gaScript = document.createElement('script');
     gaScript.async = true;
     gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-G6MZRGKKM4";

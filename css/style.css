@@ -448,6 +448,31 @@
 .carousel-header {
     position: relative;
     overflow: hidden;
+    height: 1000px;
+}
+
+.carousel .carousel-inner .carousel-item {
+    height: 1000px;
+}
+
+@media (max-width: 992px) {
+    .carousel-header {
+        height: 400px;
+    }
+    
+    .carousel .carousel-inner .carousel-item {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-header {
+        height: 300px;
+    }
+    
+    .carousel .carousel-inner .carousel-item {
+        height: 300px;
+    }
 }
 
 .carousel-indicators {
@@ -1474,7 +1499,8 @@
     position: fixed;
     bottom: 20px;
     left: 20px;
-    background-color: var(--aconcagua-color-3);
+    background-color: rgba(28, 116, 185, 0.85);
+    backdrop-filter: blur(3px);
     color: #fff;
     padding: 15px;
     border-radius: 5px;
@@ -1509,6 +1535,18 @@
     cursor: pointer;
     border-radius: 5px;
     font-size: 14px;
+}
+
+.cookie-button + .cookie-button {
+    margin-left: 10px;
+}
+
+.cookie-button.cookie-button-secondary {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.cookie-button.cookie-button-secondary:hover {
+    background-color: rgb(209, 24, 24);
 }
 
 .cookie-button:hover {

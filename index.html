@@ -107,7 +107,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="img/theme/aconcagua_hero_2.jpg" class="img-fluid w-100" alt="Image">
+                        <video src="resources/aconcagua-hero.mp4" class="img-fluid w-100" autoplay muted loop style="object-fit: cover; object-position: bottom; display: block; width: 100%; height: 100%;"></video>
                         <div class="carousel-caption-2">
                             <div class="carousel-caption-2-content">
                                 <h1 class="display-2 text-capitalize text-white mb-4 fadeInRight animated"
@@ -134,6 +134,84 @@
         <!-- Carousel End -->
     </div>
     <!-- Navbar & Hero End -->
+
+     <!-- Docu Series Start -->
+    <div class="container-xxl py-5 wow fadeInUp">
+        <div class="container">
+            <div class="text-center mx-auto" style="max-width: 800px">
+                <h1 class="display-6 mb-5">Aconcagua Docu Series</h1>
+                <p class="mb-4 fs-5 text-primary">Explore the three-part Aconcagua documentary series on Vimeo to learn how collective action is helping restore water balance and biodiversity.</p>
+            </div>
+            <style>
+                .video-card {
+                    transition: all 0.3s ease;
+                }
+                .video-card:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
+                }
+                .thumbnail-link {
+                    display: block;
+                    text-decoration: none;
+                    overflow: hidden;
+                    border-radius: 0.375rem;
+                    position: relative;
+                }
+                .thumbnail-link::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0, 209, 249, 0.2);
+                    border-radius: 0.375rem;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                .thumbnail-link:hover::after {
+                    opacity: 1;
+                }
+                .thumbnail-link img {
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+            </style>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="icon-box-item rounded h-100 p-5 video-card">
+                        <a href="https://vimeo.com/946719282" target="_blank" rel="noopener" class="thumbnail-link">
+                            <img src="https://vumbnail.com/946719282.jpg" alt="Episode 1 thumbnail" class="img-fluid rounded mb-3 w-100" />
+                        </a>
+                        <h3 class="mb-3">Trailer</h3>
+                        <p class="mb-4">Discover the story of Aconcagua and the vision behind the WAVE Partnership.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="https://vimeo.com/946719282" target="_blank" rel="noopener">Watch on Vimeo</a>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="icon-box-item rounded h-100 p-5 video-card">
+                        <a href="https://vimeo.com/981980146" target="_blank" rel="noopener" class="thumbnail-link">
+                            <img src="https://vumbnail.com/981980146.jpg" alt="Episode 1 thumbnail" class="img-fluid rounded mb-3 w-100" />
+                        </a>
+                        <h3 class="mb-3">Episode 1</h3>
+                        <p class="mb-4">Learn about the impact of collective water stewardship and the future for Aconcagua.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="https://vimeo.com/981980146" target="_blank" rel="noopener">Watch on Vimeo</a>
+                    </div>
+                </div>
+                <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="icon-box-item rounded h-100 p-5 video-card">
+                        <a href="https://vimeo.com/981985882" target="_blank" rel="noopener" class="thumbnail-link">
+                            <img src="https://vumbnail.com/981985882.jpg" alt="Episode 2 thumbnail" class="img-fluid rounded mb-3 w-100" />
+                        </a>
+                        <h3 class="mb-3">Episode 2</h3>
+                        <p class="mb-4">See how farmers, buyers and communities are working together in the catchment.</p>
+                        <a class="btn btn-primary rounded-pill py-2 px-4" href="https://vimeo.com/981985882" target="_blank" rel="noopener">Watch on Vimeo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Docu Series End -->
 
     <!-- About WAVE Start -->
     <div class="container-fluid about overflow-hidden py-5" id="about">
@@ -468,10 +546,11 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px">
-                        <img class="position-absolute w-100 h-100 image_rotate" src="img/theme/stakeholder_meeting.jpg"
-                            alt="Hands in a stream" id="image1" style="object-fit: cover" />
-                    </div>
+                    <figure class="mission-scroll-img figure mb-0">
+                        <img class="img-fluid figure-img" src="img/theme/stakeholder_meeting.jpg"
+                            alt="Hands in a stream" />
+                        <figcaption class="figure-caption text-muted small"><em>Presentation of the Aconcagua Partnership strategy at the Embassy of the Netherlands in Santiago (2025), with representatives from the private sector and public institutions exploring opportunities for collaboration.</em></figcaption>
+                    </figure>
                 </div>
             </div>
         </div>
@@ -764,7 +843,7 @@
             <div class="row g-4 align-items-center">
                 <div class="col-md-6 text-center text-md-start mb-md-0 text-white">
                     <span><i class="fas fa-copyright text-light me-2"></i><a href="#"
-                            class="border-bottom text-white">2025 NewForesight</a>, all rights reserved.</span>
+                            class="border-bottom text-white">2026 NewForesight</a>, all rights reserved.</span>
                 </div>
                 <div class="col-md-6 text-center text-md-end text-white">
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
@@ -784,10 +863,12 @@
 
     <!-- Cookie Banner -->
     <div id="cookie-banner" class="cookie-banner">
-        <p>We use cookies to improve your experience. By using our site, you agree to our <a href="cookie-policy.html"
-                target="_blank">cookie
-                policy</a>.</p>
-        <button id="accept-cookies" class="cookie-button">Accept</button>
+        <p class="m">We use cookies to improve your experience and measure website usage.
+            Learn more in our <a href="cookie-policy.html" target="_blank">cookie policy</a>.<br></p>
+        <div class="cookie-banner-actions">
+            <button id="accept-cookies" class="cookie-button">Accept</button>
+            <button id="reject-cookies" class="cookie-button cookie-button-secondary">Reject</button>
+        </div>
     </div>
 
     <!-- JavaScript Libraries -->
