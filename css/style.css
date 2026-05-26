@@ -457,21 +457,17 @@
 
 @media (max-width: 992px) {
     .carousel-header {
-        height: 400px;
+        min-height: 350px;
+        height: auto;
     }
 
     .carousel .carousel-inner .carousel-item {
-        height: 400px;
-    }
-}
-
-@media (max-width: 768px) {
-    .carousel-header {
-        height: 300px;
+        min-height: 350px;
+        height: auto;
     }
 
-    .carousel .carousel-inner .carousel-item {
-        height: 300px;
+    .carousel-header .display-2 {
+        font-size: 25px;
     }
 }
 
@@ -655,7 +651,7 @@
 
 @media (max-width: 992px) {
     .bg-breadcrumb {
-        padding: 60px 0 60px 0;
+        padding: 120px 0 60px 0;
     }
 }
 
@@ -1443,6 +1439,17 @@
         padding-inline: 1.5rem;
     }
 
+    @media (max-width: 991px) {
+        ul li {
+            --inlineP: 0rem;
+        }
+
+        ul li .title,
+        ul li .descr {
+            padding-inline: 0rem;
+        }
+    }
+
     ul li .title {
         overflow: hidden;
         padding-block-start: 1.5rem;
@@ -1456,6 +1463,7 @@
     }
 
     @media (min-width: 768px) {
+
         ul {
             grid-template-columns: 1fr var(--line-w) 1fr;
         }
@@ -1916,4 +1924,55 @@
 .simple-list li ul {
     list-style: none;
     padding-left: 2em;
+}
+
+.video-card {
+    transition: all 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+.thumbnail-link {
+    display: block;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    position: relative;
+}
+
+.thumbnail-link::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 209, 249, 0.2);
+    border-radius: 0.375rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail-link:hover::after {
+    opacity: 1;
+}
+
+.thumbnail-link img {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+
+    .p-5 {
+        padding: 1rem !important;
+    }
+
+    .py-5 {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
 }
