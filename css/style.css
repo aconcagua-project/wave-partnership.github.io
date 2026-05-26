@@ -1907,3 +1907,13 @@
     box-shadow: none !important;
     min-height: auto;
 }
+
+.simple-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.simple-list li ul {
+    list-style: none;
+    padding-left: 2em;
+}
